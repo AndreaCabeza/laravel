@@ -13,6 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/restaurante', function () {
+    $restaurante= [
+        ["name" => "Para compartir"],
+        ["name" => "Individual"],
+        ["name" => "Familiar"],
+    ];
+    return view('menú', ["restaurante" =>$restaurante]);
+})->name ("restaurante");
+
+Route::get('/restaurante', [ProductoController::class, "index"]) ->name("restaurante.index");
