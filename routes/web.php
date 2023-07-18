@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ClienteController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,13 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/restaurante', function () {
-    $restaurante= [
-        ["name" => "Para compartir"],
-        ["name" => "Individual"],
-        ["name" => "Familiar"],
-    ];
-    return view('menú', ["restaurante" =>$restaurante]);
-})->name ("restaurante");
+// Route::get('/clientes', function () {
+//     $restaurante= [
+//         ["name" => "Para compartir"],
+//         ["name" => "Individual"],
+//         ["name" => "Familiar"],
+//     ];
+//     return view('menú', ["restaurante" =>$restaurante]);
+// })->name ("restaurante");
 
-Route::get('/restaurante', [ProductoController::class, "index"]) ->name("restaurante.index");
+Route::get('/clientes', [ClienteController::class, "index"]) ->name("clientes.index");
