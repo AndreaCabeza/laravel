@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('clientes', function (Blueprint $table) {
+        Schema::create('menus', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre_completo',250);
-            $table->string('telefono',15);
-            $table->string('correo')->unique();
-            $table->date('fecha_nacimiento');
+            $table->string('nombre',120);
+            $table->string('cantidad_personas',120);
+            $table->unsignedDecimal('precio',12,2);
+
         });
     }
 
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('clientes');
+        Schema::dropIfExists('menus');
     }
 };

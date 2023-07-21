@@ -11,6 +11,11 @@ class Cliente extends Model
  protected $fillable = ['nombre_completo','fecha_nacimiento','correo','telefono'];
  protected $table ='clientes';
 
+ public function facturas()
+ {
+     return $this->hasMany(Factura::class); // Relación uno a muchos, un cliente tiene muchas facturas.
+ }
+
 }
 
 
