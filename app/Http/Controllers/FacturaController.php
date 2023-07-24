@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class FacturaController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Mostrar lista de facturas
      */
     public function index()
     {
@@ -22,7 +22,7 @@ class FacturaController extends Controller
         return view('factura.create');
     }
     /**
-     * Store a newly created resource in storage.
+     * Guardar la factura 
      */
 
         public function store(Request $request)
@@ -43,37 +43,34 @@ class FacturaController extends Controller
          return redirect()->route('factura.index')
                           ->with('success', 'Factura creada exitosamente.');
      }
-    
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Factura $factura)
+    //Mostrar una factura especifica 
+    public function show($id)
     {
-        //
+        $factura = Factura::findOrFail($id);
+        return view('factura.show', compact('factura'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Factura $factura)
+     // Mostrar el formulario para editar un elemento
+
+    public function edit($id)
     {
-        //
+        $factura = Factura::findOrFail($id);
+        return view('factura.edit', compact('factura'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Factura $factura)
+     // Actualizar un elemento en la base de datos
+    public function update(Request $request, $id)
     {
-        //
+        $factura = Factura::findOrFail($id);
+        $factura->update($request->all());
+        return redirect()->route('facturas.index')->with('success', 'Factura actualizada correctamente');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Factura $factura)
+      // Eliminar un elemento de la base de datos
+    public function destroy($id)
     {
-        //
+        $factura = Factura::findOrFail($id);
+        $factura->delete();
+        return redirect()->route('facturas.index')->with('success', 'Factura eliminada correctamente');
     }
 }

@@ -34,5 +34,37 @@ class MenuController extends Controller
         return redirect()->route('menu.index')
                          ->with('success', 'Menú creado exitosamente.');
     }
+ //Mostrar un plato especifico 
+ public function show($id)
+ {
+     $menus = Menu::findOrFail($id);
+     return view('menu.show', compact('menu'));
+ }
+
+  // Mostrar el formulario para editar un elemento
+
+ public function edit($id)
+ {
+     $menus = Menu::findOrFail($id);
+     return view('menu.edit', compact('plato'));
+ }
+
+
+  // Actualizar un elemento en la base de datos
+ public function update(Request $request, $id)
+ {
+     $menus = Menu::findOrFail($id);
+     $menus->update($request->all());
+     return redirect()->route('menu.index')->with('success', 'Menu actualizada correctamente');
+ }
+
+
+   // Eliminar un elemento de la base de datos
+ public function destroy($id)
+ {
+     $menus = Menu::findOrFail($id);
+     $menus->delete();
+     return redirect()->route('menu.index')->with('success', 'Plato eliminado correctamente');
+ }
 
 }

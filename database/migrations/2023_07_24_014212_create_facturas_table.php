@@ -23,8 +23,8 @@ return new class extends Migration
             $table->dateTime('fecha_hora');
             $table->foreignId('factura_id')->constrained();
             $table->foreignId('cerveza_id')->constrained('cervezas');
-            $table->foreignId('menu_id')->constrained('menu');
-            $table->foreignId('cliente_id')->constrained();
+            $table->foreignId('menus_id')->constrained('menus');
+            $table->foreignId('clientes_id')->constrained('clientes');
 
         });
     }
