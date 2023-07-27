@@ -31,4 +31,11 @@ return new class extends Migration
     {
         Schema::dropIfExists('cervezas');
     }
+
 };
+ // public function up(): void
+//  {
+//     Schema::table('cervezas', function (Blueprint $table) {
+//         $table->string('status')->after('email')->default('active');
+//     });
+// }
