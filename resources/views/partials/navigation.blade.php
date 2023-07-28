@@ -11,8 +11,8 @@
     </div>
     <div class="flex-none">
     <ul class="menu menu-horizontal px-1 mr-6 space-x-2">
-    <li><a href="{{ route('restaurante.index') }}">Restaurante</a></li>
-    <li><a href="{{ route('menu.index') }}">Menu</a></li>
+    <li><a href="{{ route('cervezas.index') }}">Cervezas</a></li>
+    {{-- <li><a href="{{ route('menu.index') }}">Menu</a></li> --}}
     </ul>
     </div>
    </div>

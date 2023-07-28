@@ -36,13 +36,13 @@ class CervezasController extends Controller
          Cervezas::create($request->all());
  
          return redirect()->route('cervezas.index')
-                          ->with('success', 'Cerveza creada exitosamente.');
+                          ->with('info', 'Cerveza creada exitosamente.');
      }
 
      //Mostrar una cerveza especifica 
      public function show($id)
      {
-         $cerveza = Cervezas::findOrFail($id);
+         $cervezas = Cervezas::findOrFail($id);
          return view('cervezas.show', compact('cerveza'));
      }
 
@@ -50,7 +50,7 @@ class CervezasController extends Controller
  
      public function edit($id)
      {
-         $cerveza = Cervezas::findOrFail($id);
+         $cervezas = Cervezas::findOrFail($id);
          return view('cervezas.edit', compact('cerveza'));
      }
  
@@ -58,8 +58,8 @@ class CervezasController extends Controller
       // Actualizar un elemento en la base de datos
      public function update(Request $request, $id)
      {
-         $cerveza = Cervezas::findOrFail($id);
-         $cerveza->update($request->all());
+         $cervezas = Cervezas::findOrFail($id);
+         $cervezas->update($request->all());
          return redirect()->route('cervezas.index')->with('success', 'Cerveza actualizada correctamente');
      }
  
@@ -67,8 +67,8 @@ class CervezasController extends Controller
        // Eliminar un elemento de la base de datos
      public function destroy($id)
      {
-         $cerveza = Cervezas::findOrFail($id);
-         $cerveza->delete();
+         $cervezas = Cervezas::findOrFail($id);
+         $cervezas->delete();
          return redirect()->route('cervezas.index')->with('success', 'Cerveza eliminada correctamente');
      }
  

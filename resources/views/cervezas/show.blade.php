@@ -1,12 +1,14 @@
-
-@extends('layout')
-
-@section('title', 'Detalles de la Cerveza')
+@extends('layouts.app')
 
 @section('content')
-    <!-- Aquí puedes mostrar los detalles de una cerveza específica -->
-    <h1>Detalles de la Cerveza X</h1>
-    <p>Nombre: Cerveza X</p>
-    <p>Descripción: Esta es una cerveza deliciosa</p>
-    <!-- ... y otros detalles de la cerveza -->
+    <h1>Detalles de la Cerveza</h1>
+    <p><strong>Clase:</strong> {{ $cerveza->clase }}</p>
+    <p><strong>Nombre:</strong> {{ $cerveza->nombre }}</p>
+    <p><strong>Descripción:</strong> {{ $cerveza->descripcion }}</p>
+    <p><strong>Precio:</strong> {{ $cerveza->precio }}</p>
+    <p><strong>Código:</strong> {{ $cerveza->codigo }}</p>
+    <p><strong>Stock:</strong> {{ $cerveza->stock }}</p>
+    <p><strong>Activo:</strong> {{ $cerveza->activo ? 'Sí' : 'No' }}</p>
+    <!-- Otros detalles que quieras mostrar -->
 @endsection
+

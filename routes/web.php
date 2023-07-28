@@ -44,7 +44,7 @@ Route::view('/redes', 'redes_sociales') ->name('redes');
 
 
 // Ruta de la página de inicio
-Route::view('/inicio', 'inicio') -> name('inicio');
+Route::view('/', 'welcome') -> name('inicio');
 
 // Ruta para mostrar la lista de cervezas
 Route::get('/cervezas',  [CervezasController::class,'index'])->name('cervezas.index');
