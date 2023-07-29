@@ -30,7 +30,6 @@ class CervezasController extends Controller
              'precio' => 'required|numeric',
              'codigo' => 'required',
              'stock'=> 'required',
-             'activo'=> 'required',
          ]);
  
          Cervezas::create($request->all());
@@ -51,7 +50,7 @@ class CervezasController extends Controller
      public function edit($id)
      {
          $cervezas = Cervezas::findOrFail($id);
-         return view('cervezas.edit', compact('cerveza'));
+         return view('cervezas.edit', compact('cervezas'));
      }
  
 

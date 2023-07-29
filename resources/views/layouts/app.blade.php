@@ -16,7 +16,7 @@
 </header>
 <main>
 {{-- Título Cabecera --}}
-<div class="bg-green-100 my-4 text-center">
+<div class="bg-yellow-200 my-4 text-center">
 <h1 class="text-lg font-semibold m-4 uppercase">@yield('cabecera')</h1>
 </div>
 {{-- Mensajes informativos --}}

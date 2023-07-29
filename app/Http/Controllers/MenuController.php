@@ -25,7 +25,7 @@ class MenuController extends Controller
     {
         $request->validate([
             'nombre' => 'required',
-            'cantidad_personas' => 'required|integer',
+            'cantidad_personas' => 'required',
             'precio' => 'required|numeric',
         ]);
 
@@ -46,7 +46,7 @@ class MenuController extends Controller
  public function edit($id)
  {
      $menus = Menu::findOrFail($id);
-     return view('menu.edit', compact('plato'));
+     return view('menu.edit', compact('menus'));
  }
 
 

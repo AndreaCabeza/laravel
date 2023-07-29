@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\V1\CervezasController;
+use App\Http\Controllers\Api\V1\MenuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +15,10 @@ use App\Http\Controllers\Api\V1\CervezasController;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-
-Route::apiResource("v1/cervezas", CervezasController::class);
+//Cervezas
+Route::apiResource("v1/cervezas", App\Http\Controllers\Api\V1\CervezasController::class);
+//Menu
+Route::apiResource("v1/menu", App\Http\Controllers\Api\V1\MenuController::class);
 
 
 

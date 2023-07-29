@@ -1,4 +1,4 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 
 @section('content')
     <h1>Detalles de la Cerveza</h1>
@@ -10,5 +10,5 @@
     <p><strong>Stock:</strong> {{ $cerveza->stock }}</p>
     <p><strong>Activo:</strong> {{ $cerveza->activo ? 'Sí' : 'No' }}</p>
     <!-- Otros detalles que quieras mostrar -->
-@endsection
+@endsection --}}
 
