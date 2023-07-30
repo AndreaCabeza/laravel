@@ -1,4 +1,4 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 @section('titulo', 'Crear Plato')
 @section('cabecera', 'Crear Plato')
 @section('contenido')
@@ -17,7 +17,7 @@
 <label class="label" for="cantidad_personas">
 <span class="label-text">De tipo:</span>
 </label>
-<input type="text" name="cantidad_personas" placeholder="Escriba la descripción" maxlength="255" class="input input-bordered" value="{{old('cantidad_personas')}}" required />
+<input type="text" name="cantidad_personas" placeholder="Escriba para cuantas personas" maxlength="255" class="input input-bordered" value="{{old('cantidad_personas')}}" required />
 </div>
 <div class="form-control">
 <label class="label" for="precio">
@@ -34,4 +34,4 @@
 </div>
 </div>
 </div>
-@endsection
+@endsection --}}

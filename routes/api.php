@@ -18,7 +18,7 @@ use App\Http\Controllers\Api\V1\MenuController;
 //Cervezas
 Route::apiResource("v1/cervezas", App\Http\Controllers\Api\V1\CervezasController::class);
 //Menu
-Route::apiResource("v1/menu", App\Http\Controllers\Api\V1\MenuController::class);
+// Route::apiResource("v1/menu", App\Http\Controllers\Api\V1\MenuController::class);
 
 
 

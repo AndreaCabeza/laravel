@@ -33,7 +33,6 @@ class CervezasController extends Controller
             'precio' => 'required|numeric',
             'codigo' => 'required',
             'stock'=> 'required',
-            'activo'=> 'required',
         ]);
     //Crear el producto
     Cervezas::create($request->all());
@@ -45,9 +44,9 @@ class CervezasController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Cervezas $cervezas)
+    public function show(Cervezas $cerveza)
    {
-   return response()->json($cervezas, 200); //200: OK
+   return response()->json($cerveza, 200); //200: OK
    }
 
     /**
@@ -66,8 +65,8 @@ class CervezasController extends Controller
      // Eliminar un elemento de la base de datos
      public function destroy($id)
      {
-         $cerveza = Cervezas::findOrFail($id);
-         $cerveza->delete();
+         $cervezas = Cervezas::findOrFail($id);
+         $cervezas->delete();
          return response()->json(['success' => true, 'message' => 'Producto eliminado'], 204); //204: No content
      }
 }
