@@ -31,14 +31,13 @@ class MenuController extends Controller
 
         Menu::create($request->all());
 
-        return redirect()->route('menu.index')
-                         ->with('success', 'Menú creado exitosamente.');
+        return redirect()->route('menu.index');
     }
  //Mostrar un plato especifico 
  public function show($id)
  {
      $menus = Menu::findOrFail($id);
-     return view('menu.show', compact('menu'));
+     return view('menu.show', compact('menus'));
  }
 
   // Mostrar el formulario para editar un elemento
@@ -55,7 +54,7 @@ class MenuController extends Controller
  {
      $menus = Menu::findOrFail($id);
      $menus->update($request->all());
-     return redirect()->route('menu.index')->with('success', 'Menu actualizada correctamente');
+     return redirect()->route('menu.index');
  }
 
 
@@ -64,7 +63,7 @@ class MenuController extends Controller
  {
      $menus = Menu::findOrFail($id);
      $menus->delete();
-     return redirect()->route('menu.index')->with('success', 'Plato eliminado correctamente');
+     return redirect()->route('menu.index');
  }
 
 }

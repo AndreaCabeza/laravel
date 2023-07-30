@@ -29,8 +29,7 @@ class MenuController extends Controller
         ]);
     //Crear el producto
     Menu::create($request->all());
-    return response()->json(['success' => true, 'message' => 'Plato creada'], 201); //201: Created
-
+    return response()->json(['success' => true, 'message' => 'Plato creado'], 201); //201: Created
     }
 
 
